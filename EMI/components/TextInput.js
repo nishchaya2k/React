@@ -4,22 +4,22 @@ import React from 'react'
 const TextInput = ({ title, state, setState, limit }) => {
     const handleChange = (e) => {
 
-        let value = e.target.value
-        if (limit) {
+         if (!e.target.checkValidity()) window.alert("Value must between 0 to 100")
+        else setState(e.target.value)
 
-            if (value != '' && value > 100) {
-                value = value.slice(0, -1)
-            }
+        // let value = e.target.value
+        // if (limit) {
 
-            if (value != '' && value < 0) {
-                value = 0
-            }
+        //     if (value != '' && value > 100) {
+        //         value = value.slice(0, -1)
+        //     }
 
+        //     if (value != '' && value < 0) {
+        //         value = 0
+        //     }
+        // }
 
-
-        }
-
-        setState(value)
+        // setState(value)
 
     }
     return (
