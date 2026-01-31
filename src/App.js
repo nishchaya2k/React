@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       {/* <Virtualization list={list} height={400} width={300} itemHeight={35} /> */}
       <InfiniteScroll list={list} />
-      {/* <Pagination /> */}
+      {/* <Notes/> */}
     </div>
   );
 }
