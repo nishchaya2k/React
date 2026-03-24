@@ -1,0 +1,303 @@
+.pd-container {
+  display: flex;
+  gap: 32px;
+  padding: 24px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  color: #111;
+  box-sizing: border-box;
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: stretch;
+  /* overflow-x:hidden; */
+}
+.pd-left {
+  /* flex: 0 0 58%; */
+  flex: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0; /* allow flex children to control height */
+}
+.pd-main-image {
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* fixed visual height to match reference and keep right column visible */
+  flex: 0 0 auto;
+  height: 560px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  position: relative;
+}
+.pd-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cover crops to fill area like Figma */
+  display: block;
+}
+
+.pd-main-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.pd-main-nav.left {
+  left: 16px;
+}
+.pd-main-nav.right {
+  right: 16px;
+}
+.pd-thumbs-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pd-thumbs {
+  display: flex;
+  gap: 8px;
+  overflow: auto;
+  padding: 6px 0;
+  flex: 0 0 auto;
+  -webkit-overflow-scrolling: touch;
+  align-items: center;
+  height: 80px;
+}
+.pd-thumb {
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0;
+  border-radius: 6px;
+  min-width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+.pd-thumb img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.pd-thumb.active {
+  border: 2px solid #0b69ff;
+  padding: 0;
+}
+.pd-nav {
+  background: #f4f6fb;
+  border: 1px solid #e6eefb;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pd-nav.small {
+  width: 34px;
+  height: 34px;
+}
+.pd-right {
+  /* flex: 0 0 42%; */
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 8px;
+  min-height: 0;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+.pd-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  text-align: left;
+}
+.pd-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+}
+.pd-rating {
+  background: #0b69ff;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+.pd-reviews {
+  color: #666;
+}
+.pd-net {
+  color: #444;
+  font-size: 14px;
+}
+.pd-price-block {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  margin-top: 12px;
+}
+.pd-price {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+}
+.pd-usp {
+  color: #666;
+  font-size: 13px;
+}
+.pd-sizes-section {
+  margin-top: 6px;
+  width: 100%;
+}
+.pd-sizes-label {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 8px;
+  text-align: left;
+  font-weight: 600;
+}
+.pd-sizes-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  position: relative;
+}
+.pd-sizes {
+  display: flex;
+  gap: 10px;
+  overflow: auto;
+  padding: 6px 0;
+  -webkit-overflow-scrolling: touch;
+  align-items: center;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+.pd-size-item {
+  min-width: 160px; /* reduced width for compact design */
+  border: 1px solid #e6e6e6;
+  padding: 14px 12px; /* increased vertical padding to raise height */
+  min-height: 84px; /* ensure taller items */
+  border-radius: 8px;
+  cursor: pointer;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+.pd-size-item.selected {
+  border-color: #0b69ff;
+  box-shadow: 0 4px 18px rgba(11, 105, 255, 0.12);
+}
+.size-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.size-price {
+  font-size: 14px;
+  color: #111;
+  font-weight: 700;
+}
+.pd-cta-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  width: 100%;
+  align-items: center;
+}
+.pd-cta-row .add-to-cart {
+  width: 100%;
+}
+.add-to-cart {
+  width: 100%;
+  background: #0b69ff;
+  color: #fff;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(11, 105, 255, 0.12);
+  height: 48px;
+  font-size: 15px;
+}
+.buy-now {
+  background: #fff;
+  color: #0b69ff;
+  border: 1px solid #0b69ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 120px;
+  height: 44px;
+}
+.pd-desc {
+  margin-top: 16px;
+  color: #444;
+  width: 100%;
+  text-align: left;
+}
+
+/* Ensure thumbnails and sizes don't push the layout taller than the main image on small screens */
+.pd-thumbs-wrap,
+.pd-sizes-wrap {
+  align-items: center;
+}
+
+/* Smaller paddings to compact the overall look */
+.pd-container {
+  padding: 18px;
+  gap: 18px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pd-container {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .pd-left,
+  .pd-right {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  .pd-main-image {
+    min-height: 320px;
+  }
+  .pd-size-item {
+    min-width: 180px;
+  }
+}

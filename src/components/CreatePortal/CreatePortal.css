@@ -1,0 +1,53 @@
+.wrapper {
+  height: 150px;
+  width: 250px;
+  border: 2px solid black;
+  overflow: hidden; /* 🔥 this will clip dropdown */
+  padding: 20px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.button {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 150px;
+  background: red;
+  color: white;
+  border: 1px solid black;
+}
+
+.menu div {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.menu div:hover {
+  background: darkred;
+}
+
+/* Portal version */
+.portalMenu {
+  position: absolute;
+  width: 150px;
+  background: green;
+  color: white;
+  border: 1px solid black;
+}
+
+.portalMenu div {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.portalMenu div:hover {
+  background: darkgreen;
+}
