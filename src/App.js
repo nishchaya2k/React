@@ -6,6 +6,7 @@ import Hook_useEffect from './components/ReactHooks/Hook_useEffect.js';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Optimization1 from './components/Optimization/Optimization1/Optimization1.jsx';
 import CreatePortal from './components/CreatePortal/CreatePortal.jsx';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.jsx';
 
 function App() {
 
@@ -13,8 +14,10 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Optimization1 /> */}
-      <CreatePortal />
+      <ErrorBoundary>
+        {/* <Optimization1 /> */}
+        <CreatePortal />
+      </ErrorBoundary>
     </div>
   );
 }
